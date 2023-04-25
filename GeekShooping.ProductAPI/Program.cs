@@ -17,7 +17,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "GeekShopping.ProductAPI", Version = "v1" });
 });
 
-var connection = builder.Configuration["MySqlConnection:MySqlConnectionString"];
+var connection = builder.Configuration["MySQlConnection:MySQlConnectionString"];
 builder.Services.AddDbContext<MySqlContext>(options => options
             .UseMySql(connection,
             new MySqlServerVersion(
@@ -26,7 +26,6 @@ builder.Services.AddDbContext<MySqlContext>(options => options
 IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();

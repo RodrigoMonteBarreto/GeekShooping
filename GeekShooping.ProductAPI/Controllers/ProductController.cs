@@ -6,13 +6,14 @@ namespace GeekShooping.ProductAPI.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    public class ProductController : Controller
+    public class ProductController : ControllerBase
     {
         private IProductRepository _repository;
 
         public ProductController(IProductRepository repository)
         {
-            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _repository = repository ?? throw new
+                ArgumentNullException(nameof(repository));
         }
 
         [HttpGet]
@@ -26,24 +27,23 @@ namespace GeekShooping.ProductAPI.Controllers
         public async Task<ActionResult<ProductVO>> FindById(long id)
         {
             var product = await _repository.FindById(id);
-            if (product.Id <= 0) return NotFound();
+            if (product == null) return NotFound();
             return Ok(product);
         }
 
-
         [HttpPost]
-        public async Task<ActionResult<ProductVO>> Create(ProductVO Vo)
+        public async Task<ActionResult<ProductVO>> Create([FromBody] ProductVO vo)
         {
-            if (Vo == null) return BadRequest();
-            var product = await _repository.Create(Vo);
+            if (vo == null) return BadRequest();
+            var product = await _repository.Create(vo);
             return Ok(product);
         }
 
         [HttpPut]
-        public async Task<ActionResult<ProductVO>> Update(ProductVO Vo)
+        public async Task<ActionResult<ProductVO>> Update([FromBody] ProductVO vo)
         {
-            if (Vo == null) return BadRequest();
-            var product = await _repository.Update(Vo);
+            if (vo == null) return BadRequest();
+            var product = await _repository.Update(vo);
             return Ok(product);
         }
 
@@ -53,7 +53,6 @@ namespace GeekShooping.ProductAPI.Controllers
             var status = await _repository.Delete(id);
             if (!status) return BadRequest();
             return Ok(status);
-
         }
     }
 }
