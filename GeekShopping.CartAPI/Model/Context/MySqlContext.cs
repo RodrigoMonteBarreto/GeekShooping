@@ -4,6 +4,10 @@ namespace GeekShopping.CartAPI.Model.Context
 {
     public class MySqlContext : DbContext
     {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.EnableSensitiveDataLogging();
+        }
 
         public MySqlContext(DbContextOptions<MySqlContext> options) : base(options)
         {
