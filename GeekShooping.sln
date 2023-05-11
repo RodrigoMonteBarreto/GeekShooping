@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.CouponAPI", "G
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{6828E0CC-7368-437D-AE1E-B04A5322C188}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.MessageBus", "GeekShopping.MessageBus\GeekShopping.MessageBus.csproj", "{7C1D0388-0D81-4A30-A928-5B47EB6F5332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.MessageBus", "GeekShopping.MessageBus\GeekShopping.MessageBus.csproj", "{7C1D0388-0D81-4A30-A928-5B47EB6F5332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.OrderAPI", "GeekShopping.OrderAPI\GeekShopping.OrderAPI.csproj", "{FC4B38F7-2FE9-403B-8675-1D872F7F8B79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{7C1D0388-0D81-4A30-A928-5B47EB6F5332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C1D0388-0D81-4A30-A928-5B47EB6F5332}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C1D0388-0D81-4A30-A928-5B47EB6F5332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC4B38F7-2FE9-403B-8675-1D872F7F8B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4B38F7-2FE9-403B-8675-1D872F7F8B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4B38F7-2FE9-403B-8675-1D872F7F8B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4B38F7-2FE9-403B-8675-1D872F7F8B79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{B5EDCE9D-ACD5-48C0-A404-474CFC41E29A} = {83DF1E95-AF1F-4158-A8E2-ABE98868561E}
 		{5D23BBCC-A65D-4250-9451-B744A2BA94B1} = {83DF1E95-AF1F-4158-A8E2-ABE98868561E}
 		{7C1D0388-0D81-4A30-A928-5B47EB6F5332} = {6828E0CC-7368-437D-AE1E-B04A5322C188}
+		{FC4B38F7-2FE9-403B-8675-1D872F7F8B79} = {83DF1E95-AF1F-4158-A8E2-ABE98868561E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {997BAABB-554F-4EC7-96FD-10CFE85EB854}
