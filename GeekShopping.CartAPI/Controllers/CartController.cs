@@ -74,7 +74,8 @@ namespace GeekShopping.CartAPI.Controllers
         [HttpPost("checkout")]
         public async Task<ActionResult<CheckoutHeaderVO>> Checkout(CheckoutHeaderVO vo)
         {
-            string token = Request.Headers["Authorization"];
+            //string token = Request.Headers["Authorization"];
+            var token = await HttpContext.GetTokenAsync("access_token");
 
             if (vo?.UserId == null) return BadRequest();
             var cart = await _cartRepository.FindCartByUserId(vo.UserId);
